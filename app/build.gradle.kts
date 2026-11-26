@@ -16,7 +16,7 @@ android {
         versionName = "0.1.0-preview"
     }
 
-    buildFeatures { compose = true }
+    compileOptions {\n        sourceCompatibility = JavaVersion.VERSION_17\n        targetCompatibility = JavaVersion.VERSION_17\n    }\n    kotlinOptions { jvmTarget = "17" }\n\n    buildFeatures { compose = true }
 }
 
 dependencies {
