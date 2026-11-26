@@ -1,24 +1,23 @@
-# ViralClip AI — Android preview
+# ViralClip AI — Android video editor preview
 
-ViralClip AI is an Android Kotlin + Jetpack Compose preview app.
-
-## Current preview
-- YouTube URL format check (does not download YouTube videos)
-- Select a local video using Android's document picker
-- Choose a target clip duration
-- Hindi + English caption target displayed in the UI
-- 9:16 vertical MP4 export target displayed in the UI
+## Implemented in the current source
+- Android Kotlin + Jetpack Compose interface
+- Select a local video from the phone
+- Read source video duration
+- Set clip start and end times
+- Trim the selected section using AndroidX Media3 Transformer
+- Convert/export to a 1080 × 1920 (9:16) vertical MP4 using crop-to-fill
+- Save the finished MP4 using Android's system save dialog
+- No watermark is added by this app; processing is local on the phone
 
 ## Not implemented yet
-- Automatic highlight detection
-- Actual Hindi/English speech recognition and synchronized captions
-- Subject-aware vertical reframing
-- MP4 trimming, rendering, and export
-- Direct YouTube video acquisition
+- AI detection of the most engaging moments
+- Automatic speech-to-text captions in Hindi and English
+- Caption burn-in and styling
+- Automatic face/person tracking and reframing
+- Direct YouTube downloading. YouTube links are opened in YouTube; the app does not bypass download restrictions.
 
-Only edit videos you own or are authorized to use. The app does not bypass YouTube restrictions.
+Use only videos you own or are authorized to edit. Export speed and supported input formats depend on the phone's hardware and Android media codecs. The current editor is a manual trim-and-export MVP, not a finished AI highlight generator.
 
-## Build an APK
+## Build
 GitHub Actions builds a debug APK on pushes to `main` and can also be started manually from the Actions tab. Download the `ViralClipAI-preview-APK` artifact from a successful run.
-
-The APK is a preview shell until the video processing features above are implemented. The app shell itself has no subscription or daily quota; this is not a promise of unlimited AI processing.
