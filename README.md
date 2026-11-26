@@ -1,33 +1,24 @@
-# ViralClip AI — Android starter project
+# ViralClip AI — Android preview
 
-This is an Android Studio **UI prototype**, not a finished video editor and not an APK.
+ViralClip AI is an Android Kotlin + Jetpack Compose preview app.
 
-## Included
-- Native Android app shell using Kotlin + Jetpack Compose
-- YouTube URL field and basic URL check
-- Local video picker
-- Clip length and caption-language selectors
-- 9:16 output setting display
-- Honest status messages for unfinished processing features
+## Current preview
+- YouTube URL format check (does not download YouTube videos)
+- Select a local video using Android's document picker
+- Choose a target clip duration
+- Hindi + English caption target displayed in the UI
+- 9:16 vertical MP4 export target displayed in the UI
 
 ## Not implemented yet
-- YouTube video acquisition (must use permitted/authorized sources; do not bypass YouTube restrictions)
 - Automatic highlight detection
-- Speech-to-text transcription and timed captions
-- Subject-aware 9:16 reframing
-- MP4 trimming/render/export
-- Background processing and progress notifications
+- Actual Hindi/English speech recognition and synchronized captions
+- Subject-aware vertical reframing
+- MP4 trimming, rendering, and export
+- Direct YouTube video acquisition
 
-## Build
-1. Open this folder in Android Studio (recent version).
-2. Let Gradle sync and install the Android SDK Platform 35 if prompted.
-3. Run on an Android device, or use Build > Build Bundle(s) / APK(s) > Build APK(s).
+Only edit videos you own or are authorized to use. The app does not bypass YouTube restrictions.
 
-The build environment used to prepare this project did not have Android SDK/Gradle installed, so an installable APK could not be compiled here.
+## Build an APK
+GitHub Actions builds a debug APK on pushes to `main` and can also be started manually from the Actions tab. Download the `ViralClipAI-preview-APK` artifact from a successful run.
 
-## Suggested implementation path
-- Media3 Transformer for local media editing/export
-- On-device speech recognition or an on-device ASR model for captions
-- Scene/audio analysis for highlight candidates
-- Android MediaStore for saving MP4 output
-- Only process videos the user owns or is authorized to edit
+The APK is a preview shell until the video processing features above are implemented. The app shell itself has no subscription or daily quota; this is not a promise of unlimited AI processing.
